@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Curso Android UTN</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="legend_nombre">Valor</string>
+    <string name="text_moneda_origen">Moneda origen:</string>
+    <string name="text_valor">Valor:</string>
+    <string name="text_moneda_destino">Monedas Destino</string>
+    <string name="text_hint_edit">Ingrese un valor (OPCIONAL)</string>
+    <string name="button_convertir">Convertir</string>
+    <string name="legend_user">Usuario</string>
+    <string name="hint_user">Ingrese el usuario</string>
+    <string name="hint_pass">Ingrese su password</string>
+    <string name="legend_password">Password</string>
+    <string name="button_ingresar">Ingresar</string>
+    <string name="button_guardar">Guardar</string>
+    <string name="button_borrar">Borrar</string>
+    <string name="legend_edad">Edad</string>
+    <string name="legend_mail">Mail</string>
+    <string name="app_id">558355197596925</string>
+    <string name="share">Share</string>
+    <string name="genero">Género</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="actividad">Actividad</string>
+    <string name="estudio">Estudio</string>
+    <string name="trabajo">Trabajo</string>
+    <string name="calificacion">Calificación</string>
+    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
+    <string name="guardar">Guardar</string>
+    <string name="equipo">Equipo</string>
+    <string name="librosdb">librosDB</string>
+
+</resources>

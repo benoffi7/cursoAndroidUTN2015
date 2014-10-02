@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="equipos">
+        <item>Velez</item>
+        <item>Boca</item>
+        <item>River</item>
+        <item>Otro</item>
+    </string-array>
+
+</resources>
