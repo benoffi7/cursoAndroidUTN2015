@@ -125,9 +125,9 @@ public class lay_login extends Activity
 		String user = mSharedPreferences.getString(Configuracion.user, "");
 		if (user.length()>0)
 		{
-			if (!edit_user.getText().toString().equals(pass))
+			if (!edit_user.getText().toString().equals(user))
 			{
-				return "Use incorrecta";
+				return "User incorrecto";
 			}
 		}
 		
