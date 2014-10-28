@@ -7,9 +7,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DAO_Libros extends SQLiteOpenHelper
 { 
+	private SQLiteDatabase baseDatos;
+
 	public DAO_Libros(Context contexto, String nombre, CursorFactory factory, int version) 
 	{
 	      super(contexto, nombre, factory, version);
@@ -38,17 +41,26 @@ public class DAO_Libros extends SQLiteOpenHelper
 	
 	public void insertarDatos(Libro oLibro)
 	{
-		 SQLiteDatabase baseDatos = getWritableDatabase();
+		if ((baseDatos!=null)&&(baseDatos.isOpen()))
+		{
+			Log.d("Curso", "Ya esta abierta");
+		}
+		else
+		{
+			baseDatos = getWritableDatabase();
+			Log.d("Curso", "La abro");
+		}
+		 
 		 baseDatos.execSQL("INSERT INTO libros (cantidadHojas ,nombre  , autor , precio , codigo ) "
 		 		+ "VALUES ("+oLibro.getCantidadHojas()+",'"+oLibro.getNombre()+"','"+oLibro.getAutor()+"'"
 		 		+","+oLibro.getPrecio()+",'"+oLibro.getCodigo()+"'"
 		 		+")");
-		 baseDatos.close(); 
+//		 baseDatos.close(); 
 	}
 
 	public ArrayList<Libro> recuperarDatos()
 	{
-		 SQLiteDatabase baseDatos = getWritableDatabase(); 
+		 baseDatos = getWritableDatabase(); 
 		 String sql = "SELECT * FROM libros"; 
 		 Cursor cursor = baseDatos.rawQuery(sql, null); 
 		 ArrayList<Libro >libros=new ArrayList<Libro>();  
@@ -69,7 +81,7 @@ public class DAO_Libros extends SQLiteOpenHelper
 	
 	public int recuperarCantidad()
 	{
-		 SQLiteDatabase baseDatos = getWritableDatabase(); 
+		 baseDatos = getWritableDatabase(); 
 		 String sql = "SELECT * FROM libros"; 
 		 Cursor cursor = baseDatos.rawQuery(sql, null); 
 		 int cantidad = cursor.getCount();
@@ -81,14 +93,14 @@ public class DAO_Libros extends SQLiteOpenHelper
 	
 	public void borrarLibro(Libro olibro) 
 	{
-		 SQLiteDatabase baseDatos = getWritableDatabase();
+		 baseDatos = getWritableDatabase();
 		 baseDatos.execSQL("DELETE FROM libros where nombre ='"+olibro.getNombre()+"'");
 		 baseDatos.close(); 	
 	}
 
 	public void actualizarLibro(Libro olibro)
 	{
-		 SQLiteDatabase baseDatos = getWritableDatabase();
+		 baseDatos = getWritableDatabase();
 		 baseDatos.execSQL("UPDATE libros set precio ="+olibro.getPrecio()+", cantidadhojas ="+olibro.getCantidadHojas()+" where nombre = '"+olibro.getNombre()+"';" );
 		 baseDatos.close(); 
 	}
