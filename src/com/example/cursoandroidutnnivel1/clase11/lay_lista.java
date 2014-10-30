@@ -3,6 +3,8 @@ package com.example.cursoandroidutnnivel1.clase11;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.widget.ListView;
@@ -78,9 +80,39 @@ public class lay_lista extends Activity
 		{
 			e.printStackTrace();
 		}
-		// android.Manifest.permission.SEND_SMS permission.
+		// <uses-permission android:name="android.permission.SEND_SMS"/>
+		  
 
+	}
+	
+	void call()
+	{
+		try
+		{
+				Intent intent = new Intent(Intent.ACTION_DIAL);
+				//Intent intent = new Intent(Intent.ACTION_CALL);
+				intent.setData(Uri.parse("tel:" + 123));
+				startActivity(intent);
+		}
+		catch (Exception ex)
+		{
+		       ex.printStackTrace();
+		}
+		//  <uses-permission android:name="android.permission.CALL_PHONE"/>
+	}
+	
+	void sendMail()
+	{
+		Intent intent = new Intent(Intent.ACTION_SEND);
 
+		intent.setType("message/rfc822");
+
+		intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@hola.com.ar"});
+
+		intent.putExtra(Intent.EXTRA_SUBJECT, "Contacto");
+
+		intent.putExtra(Intent.EXTRA_TEXT, "pepe");
+		startActivity(Intent.createChooser(intent, "Email"));
 	}
 	
 	
