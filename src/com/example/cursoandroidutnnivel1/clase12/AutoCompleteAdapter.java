@@ -1,4 +1,4 @@
-package com.example.cursoandroidutnnivel1.clase13;
+package com.example.cursoandroidutnnivel1.clase12;
 
 import java.util.ArrayList;
 
@@ -96,13 +96,7 @@ public class AutoCompleteAdapter extends ArrayAdapter<Casa> implements Filterabl
 					{					
 						add(aux);						
 					} 
-					/*
-					for (int i=0;i<results.count;i++)
-					{
-						Casa aux = ((ArrayList<Casa>) results.values).get(i);
-						aux.getCantidadAmbientes();
-						add(aux);	
-					}*/
+					
 					
 					//si hay resultados, actualizo la vista del adaptador
 					if (results.count > 0) 

@@ -81,8 +81,6 @@ public class lay_lista extends Activity
 			e.printStackTrace();
 		}
 		// <uses-permission android:name="android.permission.SEND_SMS"/>
-		  
-
 	}
 	
 	void call()

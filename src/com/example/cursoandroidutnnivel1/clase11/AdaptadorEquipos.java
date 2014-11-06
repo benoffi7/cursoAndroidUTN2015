@@ -2,7 +2,10 @@ package com.example.cursoandroidutnnivel1.clase11;
 
 import java.util.ArrayList;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,9 +23,9 @@ public class AdaptadorEquipos extends BaseAdapter
 	private ArrayList<Equipo> equipos;
 	private Context context;
 
-	public AdaptadorEquipos(ArrayList<Equipo> equipos, Context Context)
+	public AdaptadorEquipos(ArrayList<Equipo> Equipos, Context Context)
 	{
-		this.equipos = equipos;
+		this.equipos = Equipos;
 		this.context = Context;
 	}
 
@@ -39,7 +42,7 @@ public class AdaptadorEquipos extends BaseAdapter
 	}
 
 	@Override
-	public long getItemId(int arg0)
+	public long getItemId(int position)
 	{
 		return 0;
 	}
@@ -56,9 +59,10 @@ public class AdaptadorEquipos extends BaseAdapter
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
 		 final Equipo item = getItem(position);
-		ViewHolder holder;
+		 ViewHolder holder;
 		if (convertView == null)//es la primera vez
 		{
+			Log.d("Curso","esta es la primera vez del elemento "+item.getNombre());
 			LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			convertView = li.inflate(R.layout.row_equipo, parent, false);
 			holder = new ViewHolder();
@@ -70,9 +74,10 @@ public class AdaptadorEquipos extends BaseAdapter
 		} 
 		else
 		{
+			Log.d("Curso","esta es la primera vez del elemento "+item.getNombre());
 			holder = (ViewHolder) convertView.getTag();
 		}
-
+		
 		holder.text_equipo.setText(item.getNombre());
 		holder.text_puntos.setText("Puntos: "+item.getPuntos());
 		holder.image_flag.setImageDrawable(item.getBandera());
@@ -82,6 +87,7 @@ public class AdaptadorEquipos extends BaseAdapter
 			public void onClick(View v)
 			{
 				Toast.makeText(context, item.getNombre(), Toast.LENGTH_SHORT).show();
+				context.startActivity(new Intent(context, lay_lista.class));
 			}
 		});
 		return convertView;

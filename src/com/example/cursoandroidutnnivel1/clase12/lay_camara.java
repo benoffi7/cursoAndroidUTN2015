@@ -191,7 +191,7 @@ public class lay_camara  extends Activity
 		 //levanto mi directorio
 
 		 File myDir = new File(root + "/saved_images");
-//si el directorio existe, no hago nada
+		 //si el directorio existe, no hago nada
          if (myDir.exists())
          {
         	 
