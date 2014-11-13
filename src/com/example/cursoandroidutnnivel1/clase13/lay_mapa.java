@@ -1,4 +1,4 @@
-package com.example.cursoandroidutnnivel1.clase14;
+package com.example.cursoandroidutnnivel1.clase13;
 
 import java.io.File;
 
@@ -156,12 +156,13 @@ public class lay_mapa extends FragmentActivity
 			//recuperamos la posición
 			LatLng ubicacion = new LatLng(location.getLatitude(),location.getLongitude());
 			//creamos un objeto cámara y establecemos zoom y posicion
-			CameraPosition camPos = new CameraPosition.Builder().target(ubicacion)
+			CameraPosition camPos = new CameraPosition.Builder()
+					.target(ubicacion)
 					.zoom(14) // Establecemos el zoom en 14
 					.build();
-			CameraUpdate camUpd3 = CameraUpdateFactory.newCameraPosition(camPos);
+			CameraUpdate camUpd = CameraUpdateFactory.newCameraPosition(camPos);
 			//animamos el mapa basado en esa configuraci�n de camara
-			mapa.animateCamera(camUpd3);
+			mapa.animateCamera(camUpd);
 		}
 
 		public void onProviderDisabled(String provider) 
@@ -178,6 +179,7 @@ public class lay_mapa extends FragmentActivity
 
 		public void onGpsStatusChanged(int event)
 		{
+			
 		}
 	}
 }

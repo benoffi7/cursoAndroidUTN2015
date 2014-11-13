@@ -33,7 +33,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.cursoandroidutnnivel1.clase12.lay_autocomplete"
+            android:name="com.example.cursoandroidutnnivel1.clase13.lay_mapa"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -46,13 +46,19 @@
         </activity>
         <activity android:name="com.example.cursoandroidutnnivel1.clase1.activity_empty" >
         </activity>
-        <activity android:name="com.example.cursoandroidutnnivel1.clase10.lay_lista" >
-        </activity>
+       
         
         <activity android:name="com.example.cursoandroidutnnivel1.clase16.CaptureActivity" >
         </activity>
         <activity android:name="com.example.cursoandroidutnnivel1.clase16.LayResultado" >
         </activity>
+        
+          <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBdP5FoClCnUCGoxmdZ6r6vOwa2eCjxmZw" />
 
         
     </application>

@@ -115,7 +115,18 @@ public class AutoCompleteAdapter extends ArrayAdapter<Casa> implements Filterabl
 				{
 					//es una version reducida del if
 					//si es nulo, muestro "" sino la direccion
-					return resultValue == null ? "" : ((Casa) resultValue).getDireccion();
+					
+					if (resultValue == null)
+					{
+						return "";
+						
+					}
+					else
+					{
+						return ((Casa) resultValue).getDireccion();
+					}
+					
+					//return resul tValue == null ? "" : ((Casa) resultValue).getDireccion();
 				}
 			};
 			return myFilter;
@@ -142,6 +153,7 @@ public class AutoCompleteAdapter extends ArrayAdapter<Casa> implements Filterabl
 		//lo asigo a un arreglo de resultados
 		for (int i = 0; i < casas.size(); i++)
 		{
+			// nombreCampo LIKE '%direccion%'
 			if (casas.get(i).getDireccion().contains(direccion))
 			{
 				resultados.add(casas.get(i));

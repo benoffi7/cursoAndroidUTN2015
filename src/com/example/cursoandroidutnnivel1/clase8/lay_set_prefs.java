@@ -109,9 +109,10 @@ public class lay_set_prefs extends Activity
 			public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser)
 			{
 				//muestro un toast con el valor de las estrellas
-				Toast.makeText(getApplicationContext(), ""+rating, Toast.LENGTH_SHORT).show();				
+				Toast.makeText(getApplicationContext(),""+rating, Toast.LENGTH_SHORT).show();				
 			}
 		});
+		
 		
 //		int varaible = 3;
 //		text_edad.setText(""+varaible);
@@ -194,7 +195,7 @@ public class lay_set_prefs extends Activity
 			{
 				SharedPreferences.Editor editor = mSharedPreferences.edit();
 				editor.putInt(getResources().getString(R.string.edad), seekBar_edad.getProgress());
-				editor.putInt(getResources().getString(R.string.calificacion), ratingBar_calificacion.getProgress());
+				editor.putFloat(getResources().getString(R.string.calificacion), ratingBar_calificacion.getRating());
 				editor.putString(getResources().getString(R.string.nombre), editText_nombre.getText().toString());
 				editor.putBoolean(getResources().getString(R.string.trabajo), checkBox_trabajo.isChecked());
 				editor.putBoolean(getResources().getString(R.string.estudio), checkBox_estudio.isChecked());

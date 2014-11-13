@@ -18,6 +18,8 @@ import com.example.cursoandroidutnnivel1.R;
 
 public class lay_autocomplete extends Activity
 {
+	String metadato = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -35,7 +37,19 @@ public class lay_autocomplete extends Activity
 			public void onItemClick(AdapterView<?> arg0, View textView, int pos,long rowId) 
 			{
 				//recuerden que el tag es como una mochila que se le puede 
-				Log.d("Autocomplete", "Seleccione algo: "+textView.getTag().toString());				
+				Log.d("Autocomplete", "Seleccione algo: "+textView.getTag().toString());	
+				metadato = textView.getTag().toString();
+			}
+		});
+		
+		autoComplete_edit.setOnKeyListener(new OnKeyListener()
+		{
+			
+			@Override
+			public boolean onKey(View arg0, int arg1, KeyEvent arg2)
+			{
+				metadato = "";
+				return false;
 			}
 		});
 		

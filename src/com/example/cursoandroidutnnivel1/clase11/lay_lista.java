@@ -27,6 +27,8 @@ public class lay_lista extends Activity
 	
 	private void setAdapter()
 	{
+		list_equipos = (ListView)findViewById(R.id.list_equipos);
+
 		ArrayList<Equipo> equipos = getEquipos();
 		AdaptadorEquipos adap = new AdaptadorEquipos(equipos , getApplicationContext());
 		list_equipos.setAdapter(adap);
@@ -34,7 +36,6 @@ public class lay_lista extends Activity
 
 	void findViews()
 	{
-		list_equipos = (ListView)findViewById(R.id.list_equipos);
 	}
 
 	private ArrayList<Equipo> getEquipos()

@@ -2,7 +2,6 @@ package com.example.cursoandroidutnnivel1.clase11;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
