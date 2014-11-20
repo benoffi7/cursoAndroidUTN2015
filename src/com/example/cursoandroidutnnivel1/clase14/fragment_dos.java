@@ -40,6 +40,26 @@ public class fragment_dos extends Fragment
 		pos = getArguments().getInt("pos", 0);
 		titulo = getArguments().getString("titulo");
 	}
+	
+	@Override
+	public void onResume()
+	{
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+	
+	 @Override
+	public void onDestroy()
+	{
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+	 @Override
+	public void onDestroyView()
+	{
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

@@ -40,5 +40,4 @@ public class AdaptadorPaginas extends FragmentPagerAdapter
 	{
 		return "Page " + position;
 	}
-
 }

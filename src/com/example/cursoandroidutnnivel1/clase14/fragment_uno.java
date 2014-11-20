@@ -1,11 +1,14 @@
 package com.example.cursoandroidutnnivel1.clase14;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.cursoandroidutnnivel1.R;
 
@@ -47,6 +50,18 @@ public class fragment_uno extends Fragment
 		rootView = inflater.inflate(R.layout.fragment_uno, container, false);
 		findViews();
 		button1.setText(titulo);
+		Toast.makeText(getActivity(), "sss",Toast.LENGTH_SHORT).show();
+
+		button1.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View arg0)
+			{
+				startActivity(new Intent(getActivity(),lay_fragments.class));
+				getActivity().getResources().getString(R.string.app_id);
+				
+			}
+		});
 		return rootView;
 	}
 

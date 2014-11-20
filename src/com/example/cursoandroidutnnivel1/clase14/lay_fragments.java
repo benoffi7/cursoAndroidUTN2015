@@ -16,7 +16,7 @@ public class lay_fragments extends FragmentActivity
 		ViewPager paginador = (ViewPager) findViewById(R.id.imagepager);
 		AdaptadorPaginas adap_pag = new AdaptadorPaginas(getSupportFragmentManager());
 		paginador.setAdapter(adap_pag);
-		paginador.setCurrentItem(0);
+		paginador.setCurrentItem(1);
 		super.onCreate(savedInstanceState);
 	}
 }
