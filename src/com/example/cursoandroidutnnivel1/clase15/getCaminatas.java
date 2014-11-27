@@ -114,6 +114,7 @@ public class getCaminatas
 						}
 
 						oCaminata.setFotos(fotos);
+						caminatas.add(oCaminata);
 					}
 				}
 			}

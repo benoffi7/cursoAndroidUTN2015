@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.cursoandroidutnnivel1.R;
 
@@ -16,8 +20,13 @@ public class lay_internet extends Activity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		setContentView(R.layout.lay_internet);
+		
+		if (isNetworkAvailable())
 
 		new descargarCaminatas().execute();
+		
+		else
+			Toast.makeText(getApplicationContext(), "Sin internet", Toast.LENGTH_SHORT).show();
 
 		super.onCreate(savedInstanceState);
 	}
@@ -50,5 +59,12 @@ public class lay_internet extends Activity
 			listView_circuitos.setAdapter(adap);
 			super.onPostExecute(result);
 		}
+	}
+	
+	private boolean isNetworkAvailable() 
+	{
+		ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+		return activeNetworkInfo != null && activeNetworkInfo.isConnected();
 	}
 }
