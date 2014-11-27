@@ -59,7 +59,8 @@ public class AutoCompleteAdapter extends ArrayAdapter<Casa> implements Filterabl
 				protected FilterResults performFiltering(final CharSequence constraint) 
 				{			
 					//levanto un arreglo de casa
-					ArrayList <Casa> addressList = null;
+					ArrayList <Casa> addressList = new ArrayList<Casa>();
+
 					//pregunto si hay texto ingreso y ese tiene + de 3 caracteres
 					if ((constraint != null) && (constraint.length()>2))
 					{
@@ -67,15 +68,10 @@ public class AutoCompleteAdapter extends ArrayAdapter<Casa> implements Filterabl
 						addressList = devolverCasas(constraint);
 					}
 					
-					//si no entro al if anterior y la lista es nula, la instacio (vacia)
-					if (addressList == null)
-					{
-						addressList = new ArrayList<Casa>();
-					}
-					 
+					
 					//el metodo me pide devolver FilterResults asi que tengo que tomar mi arreglo (vacio o con resultados)
 					//y crear una copia pero con otro tipo de objeto
-					final FilterResults filterResults = new FilterResults();
+					 FilterResults filterResults = new FilterResults();
 					filterResults.values = addressList;
 					filterResults.count = addressList.size();
 	 

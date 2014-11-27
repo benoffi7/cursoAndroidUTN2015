@@ -33,7 +33,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.example.cursoandroidutnnivel1.clase14.lay_fragments"
+            android:name="com.example.cursoandroidutnnivel1.clase15.lay_internet"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

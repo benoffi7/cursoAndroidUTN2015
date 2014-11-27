@@ -1,7 +1,5 @@
 package com.example.cursoandroidutnnivel1.clase12;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;

@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="verde">#FFEECC</color>
-    <color name="azul">#AABBCC</color>
+
+    <color name="header">#58567D</color>
+    <color name="fondo">#3366CC</color>
+    <color name="azul">#006699</color>
+    <color name="celeste">#0099CC</color>
+    <color name="texto_tab_non_focus">#385487</color>
+    <color name="blanco">#ffffff</color>
+    <color name="violeta">#833CB6</color>
+    <color name="violeta2">#A587BB</color>
+    <color name="negro">#000000</color>
+    <color name="gris">#8F8C8C</color>
+    <color name="naranja">#E07B1B</color>
+    <color name="verde">#43BD31</color>
+    <color name="rojo">#FF1d25</color>
+    <color name="gris_us">#4D4D4D</color>
+    <color name="azul_us">#3fa9f5</color>
+    <color name="verde_us">#7ac943</color>
+    <color name="gris_oscuro">#202020</color>
+    <color name="celeste_us">#84CCFF</color>
+    <color name="facebook">#3E5EA0</color>
+    <color name="twitter">#52BCE5</color>
+    <color name="fondo_sin_detalle">#82C7F8</color>
+    <color name="blanco_dos">#E5E5E5</color>
+    
+    <color name="negro_33">#333333</color>
+    <color name="negro_98">#989898</color>
+    <color name="gris_80">#808080</color>
+   
+ <color name="holo_dark_green_semitransp">#80669900</color>
+    <color name="holo_dark_green_semitransp_negative">#809A0000</color>
+    
+      <color name="verde_trans">#D1ECBD</color>
+    <color name="rojo_trans">#FFB0B3</color>
+    
 </resources>
